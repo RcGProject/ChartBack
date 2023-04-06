@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { connectBD, sessionOptions } from "./src/config/database";
 import homeRoutes from "./src/routes/homeRoutes";
+import chartRoutes from "./src/routes/chartRoutes";
 
 // Cria a classe App, que será responsável por configurar o servidor
 class App {
@@ -23,8 +24,8 @@ class App {
 
   // Método responsável por definir as rotas do servidor
   routes() {
-    this.app.use("/", homeRoutes);
-    this.app.use("/klines", homeRoutes);
+    this.app.use('/', homeRoutes);
+    this.app.use('/chart', chartRoutes);
   }
 
   // Método que atualiza as politicas de segurança cors

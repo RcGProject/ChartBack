@@ -1,19 +1,46 @@
-import axios from "axios";
-
-// Consumindo API da Binance
 class ChartController {
-  async index(req, res, next) {
-    const { symbol, interval } = req.query;
-    if (!symbol || !interval) return res.status(422).send('Symbol and interval are required.');
-
-    try {
-      const response = await axios.get(`https://api.binance.com/api/v3/klines?symbol=${symbol}&interval=${interval}&limit=60`);
-      res.json(response.data);
-    } catch (err) {
-      res.status(500).json(err.response ? err.response.data : err.message);
+  async index(req, res) {
+    console.log(req.body.data);
+    if (!req.body.data) {
+      return res.status(400).json({
+        errors: "data required",
+      });
     }
-    return next();
+    return res.json();
   }
 }
 
 export default new ChartController();
+
+/*
+  {
+    chartType: {
+      width: 500,
+      height: 300,
+      format: 'png',
+      backgroudColor: 'transparent',
+    },
+    chartData: {
+      type: undefined,
+      data: {
+        labels: [],
+        datasets: [{
+          label: undefined,
+          data: []
+        }],
+      },
+    options: {
+      title: {
+        display: false,
+        test: undefined
+      },
+      legend: {
+        display: false,
+        position: "right",
+        align: "start",
+      }
+    }
+    }
+  }
+
+*/
