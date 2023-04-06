@@ -7,6 +7,8 @@ Repositório dedicado para o projeto QuickChart | BackEnd.
 * Sucrase
 * dotenv
 * ESLint
+* Mongoose
+* cors
 
 ## Como rodar o projeto
 * Clone este repositório em sua máquina local.
@@ -36,3 +38,4 @@ Repositório dedicado para o projeto QuickChart | BackEnd.
 ## Este projeto utiliza o ESLint para garantir a qualidade do código. As seguintes configurações foram aplicadas no arquivo .eslintrc.js:
 * As configurações do ESlint definem o ambiente de execução do código (node: true e es2021: true), a extensão do ESLint (airbnb-base), as opções de parser (ecmaVersion: 'latest' e sourceType: 'module') e as regras de qualidade do código que serão verificadas. Algumas regras foram desabilitadas (no-console, class-methods-use-this, import/first, import/no-extraneous-dependencies, import/prefer-default-export) e outras foram habilitadas (import/no-default-export, import/order) com suas respectivas configurações específicas.
 
+## Crie um arquivo .env na raiz do seu repositório com o UserName e Senha para acessar o banco de dados.

@@ -1,5 +1,5 @@
 // Importa o objeto 'app' criado em './app.js'
-import app from './app';
+import app from "./app";
 
 const port = 8081;
 

@@ -1,7 +1,13 @@
+import TestModel from "../models/TestModel";
 
 class HomeController {
   async index(req, res) {
-    return await res.json('Olá');
+    await res.send(
+      TestModel.create({
+        titulo: "Titulo teste",
+        descricao: "Testes",
+      }),
+    );
   }
 }
 
