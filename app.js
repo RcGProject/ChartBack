@@ -1,10 +1,9 @@
-// Importa o módulo express para criar o servidor
-import cors from "cors";
+// Importa o módulos para criar o servidor
 import express from "express";
-
+import cors from "cors";
 import { connectBD, sessionOptions } from "./src/config/database";
-// Importa as rotas definidas na pasta src/routes
 import homeRoutes from "./src/routes/homeRoutes";
+import chartRoutes from "./src/routes/chartRoutes";
 
 // Cria a classe App, que será responsável por configurar o servidor
 class App {
@@ -25,13 +24,16 @@ class App {
 
   // Método responsável por definir as rotas do servidor
   routes() {
-    this.app.use("/", homeRoutes);
+    this.app.use('/', homeRoutes);
+    this.app.use('/chart', chartRoutes);
   }
 
+  // Método que atualiza as politicas de segurança cors
   cors() {
     this.app.use(cors());
   }
 
+  // Método que conencta com o Banco de dados
   connect() {
     connectBD
       .then(() => {
@@ -40,6 +42,7 @@ class App {
       .catch((e) => console.log(e));
   }
 
+  // Configura a sessão do usuário
   sessionOptionsBD() {
     this.app.use(sessionOptions);
   }

@@ -1,13 +1,7 @@
-import TestModel from "../models/TestModel";
-
+// Controlador da página Home
 class HomeController {
   async index(req, res) {
-    await res.send(
-      TestModel.create({
-        titulo: "Titulo teste",
-        descricao: "Testes",
-      }),
-    );
+    await res.send('Servidor rodando...');
   }
 }
 
