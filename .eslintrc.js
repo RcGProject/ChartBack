@@ -22,6 +22,7 @@ module.exports = {
     "class-methods-use-this": "off",
     "import/first": "off",
     quotes: "off",
+    "prettier/prettier": "off",
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
     "import/no-default-export": "off",
