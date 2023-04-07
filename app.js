@@ -24,8 +24,8 @@ class App {
 
   // Método responsável por definir as rotas do servidor
   routes() {
-    this.app.use('/', homeRoutes);
-    this.app.use('/chart', chartRoutes);
+    this.app.use("/", homeRoutes);
+    this.app.use("/chart", chartRoutes);
   }
 
   // Método que atualiza as politicas de segurança cors

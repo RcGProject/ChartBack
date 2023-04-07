@@ -3,7 +3,7 @@ class ChartController {
     console.log(req.body.data);
     if (!req.body.data) {
       return res.status(400).json({
-        errors: "data required",
+        errors: 'data required',
       });
     }
     return res.json();
