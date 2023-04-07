@@ -1,77 +1,24 @@
 module.exports = {
   env: {
+    browser: true,
     es2021: true,
-    node: true,
   },
-
   extends: [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "eslint-config-prettier",
-    "airbnb",
+    'airbnb-base',
+    'eslint:recommended',
+    'prettier',
+    'plugin:prettier/recommended',
   ],
-
-  plugins: ["prettier"],
-
+  plugins: ['prettier'],
+  overrides: [],
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
   rules: {
-    "no-console": "off",
-    "class-methods-use-this": "off",
-    "import/first": "off",
-    quotes: "off",
-    "prettier/prettier": "off",
-    "import/no-extraneous-dependencies": "off",
-    "import/prefer-default-export": "off",
-    "import/no-default-export": "off",
-    "max-len": "off",
-    "import/order": [
-      "off",
-      {
-        "newlines-between": "always",
-        pathGroups: [
-          {
-            pattern: "react",
-            group: "builtin",
-            position: "before",
-          },
-          {
-            pattern: "components/**",
-            group: "external",
-            position: "after",
-          },
-          {
-            pattern: "templates/**",
-            group: "external",
-            position: "after",
-          },
-          {
-            pattern: "types/**",
-            group: "external",
-            position: "after",
-          },
-          {
-            pattern: "utils/**",
-            group: "external",
-            position: "after",
-          },
-        ],
-        pathGroupsExcludedImportTypes: ["builtin"],
-        groups: [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-        ],
-        alphabetize: {
-          order: "asc",
-        },
-      },
-    ],
+    'prettier/prettier': 'error',
+    'class-methods-use-this': 0,
+    'no-console': 0,
+    'import/prefer-default-export': 0,
   },
 };

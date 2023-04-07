@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 // Testando Schema no bando de dados
 const TestSchema = new mongoose.Schema({
@@ -6,6 +6,6 @@ const TestSchema = new mongoose.Schema({
   descricao: String,
 });
 
-const TestModel = mongoose.model("Teste", TestSchema);
+const TestModel = mongoose.model('Teste', TestSchema);
 
 module.exports = TestModel;

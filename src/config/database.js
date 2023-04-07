@@ -1,14 +1,14 @@
 // Importa o módulo dotenv para carregar variáveis de ambiente
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
+import session from 'express-session';
+import mongoose from 'mongoose';
+import MongoStore from 'connect-mongo';
 
 dotenv.config();
-import session from "express-session";
-import mongoose from "mongoose";
-import MongoStore from "connect-mongo";
 
 // Configura as opções da sessão do usuário
 const sessionOptions = session({
-  secret: "secret",
+  secret: 'secret',
   store: MongoStore.create({
     mongoUrl: process.env.CONNECTIONSTRING,
   }),
